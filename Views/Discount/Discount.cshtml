@@ -1,0 +1,21 @@
+﻿@model DiscountSystem.Models.Discount
+@{
+    ViewBag.Title = "Discount System";
+}
+<h2>Calculate Discount</h2>
+@using (Html.BeginForm("Discount", "Discount", FormMethod.Post))
+{<p>
+    Customer Name: @Html.EditorFor(e => e.CustName)
+    <br />
+    Price Per item: @Html.EditorFor(h => h.Price)
+    <br /> Quantity:@Html.EditorFor(r => r.Qty)
+
+
+    <br /> <input type="submit" value="Calc" />
+    <br /> Subtotal: @Html.DisplayFor(w => w.Subtotal)
+    <br /> Total Amount: @Html.DisplayFor(s => s.TotalAmt)
+    <br />Vat Amount:@Html.DisplayFor(c => c.Vat)
+    <br /> Discount Amount: @Html.DisplayFor(s => s.DiscRate)
+    <br />Final  Amount Due:@Html.DisplayFor(c => c.FinalDue)
+    </p>
+}
